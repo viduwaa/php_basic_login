@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #loginbtn {
+                color: white;
+                border: 3px solid hsl(208, 72%, 39%);
+                border-radius: 15px;
+                width: 200px;
+                display: inline-block;
+                text-decoration: none;
+                cursor: pointer;
+
+                position: relative;
+                isolation: isolate;
+            }
+
+            #loginbtn::after {
+                content: "";
+                border-radius: 20px;
+                position: absolute;
+                z-index: -1;
+                background: red;
+                inset: 0;
+                scale: 0 1;
+                transform-origin: right;
+                transition: scale 450ms;
+            }
+
+            /* #loginbtn:hover{
+            cursor: pointer;
+            background: lightblue;
+            
+        } */
+
+            #loginbtn:hover::after,
+            #loginbtn:focus-visible::after {
+                transform-origin: left;
+                scale: 1 1;
+            }
+        </style>
+    </head>
+    <body bgcolor="black">
+        <center><div id="loginbtn">ANIMATION</div></center>
+    </body>
+</html>
